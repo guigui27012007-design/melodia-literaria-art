@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melodia Literária — Refúgio para Leitores</title>
+    <!-- Fontes elegantes para o tema literário -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F3EEF9;
+            --primary-purple: #D4BEE4;
+            --dark-purple: #3F2E56;
+            --text-color: #1A1221;
+            --accent-color: #B39CD0;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://media.giphy.com/media/l0HlDtKo5lV8E9kJi/giphy.gif');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero / Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(229, 217, 242, 0.9) 0%, rgba(243, 238, 249, 0.9) 100%);
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 40px;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-placeholder {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.1));
+            border-radius: 50%;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--dark-purple);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--dark-purple);
+            opacity: 0.8;
+        }
+
+        /* Seção Sobre a Yasmin */
+        .sobre-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(63, 46, 86, 0.1);
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .sobre-foto {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-purple);
+            flex-shrink: 0;
+        }
+
+        .sobre-texto h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+        }
+
+        .sobre-texto p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        /* Grid Missão, Visão, Valores */
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(63, 46, 86, 0.1);
+            transition: transform 0.3s ease;
+            border-top: 5px solid var(--primary-purple);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Valores Tags */
+        .valores-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .valor-tag {
+            background: var(--bg-color);
+            color: var(--dark-purple);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Citação / Banner */
+        .quote-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(212, 190, 228, 0.9);
+            color: var(--dark-purple);
+            border-radius: 24px;
+            margin-bottom: 40px;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .quote-section blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .quote-section cite {
+            font-size: 1rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        /* Rodapé / Redes */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(63, 46, 86, 0.1);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 15px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            background: var(--dark-purple);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            box-shadow: 0 4px 15px rgba(63, 46, 86, 0.2);
+        }
+
+        .social-btn:hover {
+            background: #281d38;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .sobre-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            header h1 {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img class="logo-placeholder" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23D4BEE4'/%3E%3Ctext x='50' y='55' font-family='Playfair Display' font-size='28' font-weight='bold' fill='%233F2E56' text-anchor='middle'%3E📚%3C/text%3E%3C/svg%3E" alt="Logo Melodia Literária">
+        <h1>melodia <span style="font-family: 'Playfair Display', serif; font-weight: 400; font-style: italic;">Literária</span></h1>
+        <p>Onde as histórias se transformam em abraços.</p>
+    </header>
+
+    <div class="container">
+
+        <section class="sobre-container">
+            <img class="sobre-foto" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23D4BEE4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23B39CD0;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='95' fill='url(%23grad)'/%3E%3Ccircle cx='70' cy='80' r='8' fill='%233F2E56'/%3E%3Ccircle cx='130' cy='80' r='8' fill='%233F2E56'/%3E%3Cpath d='M 60 120 Q 100 140 140 120' stroke='%233F2E56' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="Yasmin Vitória">
+            <div class="sobre-texto">
+                <h2>Olá, eu sou a Yasmin Vitória ✨</h2>
+                <p>
+                    A <strong>Melodia Literária</strong> é o sonho de uma garota de 19 anos que foi salva pela leitura desde criança. Hoje, esse sonho toma forma como um refúgio para todos que amam perder-se nas páginas de um bom livro.
+                </p>
+                <p>
+                    Nosso grande plano é nos tornarmos uma biblioteca física no futuro, mas a nossa luta e o amor pelo sonho já começam exatamente agora.
+                </p>
+            </div>
+        </section>
+
+        <section class="mvv-grid">
+            
+            <div class="card">
+                <h3>🌸 Nossa Missão</h3>
+                <p>Acolher pessoas que, assim como eu, já se sentiram sozinhas demais no mundo. Criar um espaço onde os livros abraçam, cada história aproxima o leitor e todos encontram companhia, cura e pertencimento.</p>
+            </div>
+
+            <div class="card">
+                <h3>👁️ Nossa Visão</h3>
+                <p>Ser um espaço onde pessoas encontram não apenas livros, mas companhia. Um lugar que inspira coragem, criatividade e cura — um porto seguro para quem busca se reencontrar através de histórias.</p>
+            </div>
+
+            <div class="card">
+                <h3>💎 Valores</h3>
+                <p>Os pilares que sustentam a nossa melodia todos os dias:</p>
+                <div class="valores-list">
+                    <span class="valor-tag">Acolhimento</span>
+                    <span class="valor-tag">Sensibilidade</span>
+                    <span class="valor-tag">Conexão</span>
+                    <span class="valor-tag">Liberdade Criativa</span>
+                    <span class="valor-tag">Refúgio Seguro</span>
+                    <span class="valor-tag">Transformação</span>
+                    <span class="valor-tag">Inclusão</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="quote-section">
+            <blockquote>"Eu acho tão bonito quando a gente segue o sonho e não quer mais voltar."</blockquote>
+            <cite>— Melodia Literária</cite>
+        </section>
+
+        <footer>
+            <p>Criado com carinho para Melodia Literária &copy; 2026</p>
+            <a href="https://www.instagram.com/amelodialiteraria" target="_blank" class="social-btn">
+                Siga-nos no Instagram 📸
+            </a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
